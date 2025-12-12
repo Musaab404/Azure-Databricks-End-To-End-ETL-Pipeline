@@ -1,5 +1,5 @@
 
-# Enterprise-Grade Azure Databricks ETL Pipeline  
+# Azure Databricks ETL Pipeline  
 ![Data Architecture](docs/techstack.png)
 
 ## Overview
