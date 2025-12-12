@@ -1,6 +1,5 @@
 
 # Enterprise-Grade Azure Databricks ETL Pipeline  
-### Medallion Architecture • Lakeflow • Unity Catalog • Olist E-Commerce Analytics
 ![Data Architecture](docs/tech-stack.png)
 
 ## Overview
