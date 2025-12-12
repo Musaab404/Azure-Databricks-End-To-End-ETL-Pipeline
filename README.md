@@ -17,14 +17,16 @@ This project demonstrates the full lifecycle of a modern data engineering workfl
 
 ### Cloud Platform
 - **Azure**
-  - Azure Databricks (Unity Catalog enabled)
-  - ADLS Gen2 (bronze, silver, gold containers)
-  - Databricks Lakeflow (pipeline orchestration)
+- **Azure subscription**
+  - Azure Databricks premium account (Unity Catalog enabled)
+  - ADLS gen2 storage account (source, bronze, silver, gold containers)
+  - Access connector for Azure Databricks
 
 ### Tech Stack
+- **Frameworks:** Delta lake, Apache spark, Lakeflow Declarative Pipelines 
 - **Languages:** Python, SQL, PySpark  
 - **Data Governance:** Unity Catalog  
-- **Orchestration:** Databricks Lakeflow (Declarative Pipelines)  
+- **Orchestration:** Databricks Lakeflow (Declarative Pipelines)                      
 - **Data Architecture:** Medallion (Bronze → Silver → Gold)
 
 ---
@@ -33,22 +35,24 @@ This project demonstrates the full lifecycle of a modern data engineering workfl
 
 ### 1. Bronze Layer – Raw Ingestion
 - Ingests raw CSV files from ADLS Gen2 source container.
-- Stores them into the **bronze** schema with minimal processing.
-- Schema inference and raw auditing (ingestion timestamp, source path).
+- Converts CSV to delta lake streaming tables with schema inference.
+- Stores the managed tables into **bronze** schema as single source of truth.
 
 ### 2. Silver Layer – Cleansed & Conformed
-- Data is validated, standardized, and cleaned.
-- Handles missing values, date normalization, referential alignment.
-- Each Olist table is transformed using modular Python/PySpark scripts.
-- Outputs clean, analytics-ready **silver** tables.
+- Transformation applied :
+    - Data cleaning and handling missing values.
+    - Data standardization and abbreviation handling.
+    - Expectations and quality checks.
+- Pyspark and dlt are used in this layer.
+- Data stored in **silver** schema as managed streaming tables.
 
 ### 3. Gold Layer – Star Schema + KPIs
-- Modeled into **fact** and **dimension** tables.
+- Data modeled into **Star Schema** (fact and dimension tables).
 - Built using SQL pipelines referencing silver tables.
 - Implements:
-  - Data quality expectations (null checks, value ranges, FK integrity)
-  - Business metrics & KPIs
-  - Optimized tables for BI dashboards and ML workflows
+  - Joins, Business metrics and KPIs.
+  - Data quality expectations.
+  - Optimized **Materialized Views** for performance and fast queries.
 
 ---
 
