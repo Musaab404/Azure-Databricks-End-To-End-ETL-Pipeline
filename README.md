@@ -16,7 +16,6 @@ This project demonstrates the full lifecycle of a modern data engineering workfl
 ## Architecture
 
 ### Cloud Platform
-- **Azure**
 - **Azure subscription**
   - Azure Databricks premium account (Unity Catalog enabled)
   - ADLS gen2 storage account (source, bronze, silver, gold containers)
