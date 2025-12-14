@@ -68,10 +68,10 @@ The Gold layer delivers actionable insights for decision-making:
 - Review sentiment progress  
 
 ### Use Cases Enabled
-- Operational monitoring  
 - Marketing segmentation  
 - Forecasting (inventory, sales)  
-- Customer experience analysis  
+- Customer experience analysis
+- Machine learning
 
 This transforms raw e-commerce data into measurable value that supports strategic and operational decisions.
 
