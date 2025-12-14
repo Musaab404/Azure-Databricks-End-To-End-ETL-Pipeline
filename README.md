@@ -74,8 +74,3 @@ The Gold layer delivers actionable insights for decision-making:
 - Machine learning
 
 This transforms raw e-commerce data into measurable value that supports strategic and operational decisions.
-
----
-
-## Repository Structure
-
